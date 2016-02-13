@@ -63,9 +63,8 @@ public class myFetchService extends IntentService
             URL fetch = new URL(fetch_build.toString());
             m_connection = (HttpURLConnection) fetch.openConnection();
             m_connection.setRequestMethod("GET");
-            m_connection.addRequestProperty("X-Auth-Token",getString(R.string.api_key));
+            m_connection.addRequestProperty("X-Auth-Token", getString(R.string.api_key));
             m_connection.connect();
-
             // Read the input stream into a String
             InputStream inputStream = m_connection.getInputStream();
             StringBuffer buffer = new StringBuffer();
@@ -87,6 +86,7 @@ public class myFetchService extends IntentService
                 return;
             }
             JSON_data = buffer.toString();
+            Log.v(LOG_TAG, JSON_data);
         }
         catch (Exception e)
         {
