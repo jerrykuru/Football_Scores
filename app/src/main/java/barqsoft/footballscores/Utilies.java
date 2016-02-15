@@ -1,5 +1,7 @@
 package barqsoft.footballscores;
 
+import android.content.res.Resources;
+
 /**
  * Created by yehya khaled on 3/3/2015.
  */
@@ -28,28 +30,29 @@ public class Utilies
         {
             if (match_day <= 6)
             {
-                return "Group Stages, Matchday : 6";
+                return Resources.getSystem().getString(R.string.group_stage_text);
             }
             else if(match_day == 7 || match_day == 8)
             {
-                return "First Knockout round";
+                return Resources.getSystem().getString(R.string.First_Knockout_round);
             }
             else if(match_day == 9 || match_day == 10)
             {
-                return "QuarterFinal";
+                return Resources.getSystem().getString(R.string.QuarterFinal);
             }
             else if(match_day == 11 || match_day == 12)
             {
-                return "SemiFinal";
+                return Resources.getSystem().getString(R.string.semi_final);
             }
             else
             {
-                return "Final";
+                return Resources.getSystem().getString(R.string.Final);
             }
         }
         else
         {
-            return "Matchday : " + String.valueOf(match_day);
+
+            return "Match Day : "  + String.valueOf(match_day);
         }
     }
 
